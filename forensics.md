@@ -10,7 +10,7 @@ What are files? Well, a file is just a bunch of data. Each file is interpreted d
 
 Since a file is just a series of 0s and 1s, you need to open the right file with the right program to get something meaningful. So, how does a computer know what program to use when you double click it?
 
-On Windows, the file extension makes a big difference. Windows knows which programs are associated with which file extension. If you open file.txt it knows to open it in a text editor. But what about on Linux? Linux doesn't focus so much on the file extension, it focuses on the file header, casually known as the 'magic bytes' of a file. If you were to open the Bless hex editor and open a zip file, you would see that the first few bytes of the file will always be one of three things:
+On Windows, the file extension makes a big difference. Windows knows which programs are associated with which file extension. If you open `file.txt` it knows to open it in a text editor. But what about on Linux? Linux doesn't focus so much on the file extension, it focuses on the file header, casually known as the 'magic bytes' of a file. If you were to open the Okteta hex editor and open a zip file, you would see that the first few bytes of the file will always be one of three things:
 
 ```
 50 4B 03 04 If the zip file is a normal zip file with something in it.
