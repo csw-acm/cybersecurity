@@ -32,12 +32,12 @@ scanf("%s", buffer);
 
 This simple code creates a variable called `buffer` with room in its memory for 10 characters. It also creates another variable, this time an integer (whole number) called `test`. Then it called `scanf` which just asks a user to input something into the program. Whatever the user inputs, it saves it in the `buffer` variable.
 
-So, if the user enters something less than 10 characters, everything is fine, but if the user puts in more than 10 characters, we have a problem. Let's say the user puts in a whole bunch of A's. If the user puts in enough A's then the value of 'buffer' will be all A's, but it's also possible that the value of 'test' will be overwritten with A's. Now 'test' is an integer, so it can't hold an A value, but A written as a number is 41, so 'test' could become 41414141.
+So, if the user enters something less than 10 characters, everything is fine, but if the user puts in more than 10 characters, we have a problem. Let's say the user puts in a whole bunch of A's. If the user puts in enough A's then the value of `buffer` will be all A's, but it's also possible that the value of `test` will be overwritten with A's. Now `test` is an integer, so it can't hold an A value, but A written as a number is 41, so `test` could become `41414141`.
 
 What's the big deal? Well, you can't do much with this as it stands, you're right. But at a more complicated level, you could put your own code into the memory of the program using this method. Once you can do that, the computer will be under your control.
 
-4.3 Integer Overflow
+### 4.3 Integer Overflow
 
-An integer (whole number) can only be so big, because it has to fit in a memory address. What happens if you break the rule and create an integer that is too big to fit in the memory address? Scientifically speaking, weird stuff happens. The largest integer can depend on the system you are running on, but it is usually: 2147483647. So, what happens if you go above that number?
+An integer (whole number) can only be so big, because it has to fit in a memory address. What happens if you break the rule and create an integer that is too big to fit in the memory address? Scientifically speaking, weird stuff happens. The largest integer can depend on the system you are running on, but it is usually: `2147483647`. So, what happens if you go above that number?
 
-Well, computers use something called a 'sign bit' to tell if a number is negative or not. If you try to store a number that's too large in memory, it will overwrite the sign bit and can turn a positive number into a negative number! So you could theoretically add two positive numbers and end up with a negative number.
+Well, computers use something called a *sign bit* to tell if a number is negative or not. If you try to store a number that's too large in memory, it will overwrite the sign bit and can turn a positive number into a negative number! So you could theoretically add two positive numbers and end up with a negative number.
