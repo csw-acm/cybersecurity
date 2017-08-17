@@ -1,22 +1,22 @@
-4.0 Introduction
+## 4.0 Introduction
 
 When we mention a 'binary' file in Linux, we just mean that it's an executable file. The reason we call them binary files is because in Linux they aren't really .exe's. In Linux they are really ELF files (not like Legolas). It stands for Executable and Linking Format files. Linux doesn't really care about file extensions, so most often binary files in Linux won't have any file extension at all. A binary attack refers to using an executable file to make it do something it shouldn't normally do. This topic is hugely complicated, so we'll only go into the very basics.
 
-4.1 Memory
+## 4.1 Memory
 
 First thing's first, we'll have to talk a bit about memory. Remember in the programming section, we said that a variable is just a box that you can put some data in? Well, that box is a section of memory on the computer.
 
 In Python, you can just write:
 
-variable = "something"
+`variable = "something"`
 
 ...and not worry about how much memory it takes up; Python handles all of that for you. In lower level programming languages, you actually have to say how much memory you expect to need. So in C you would write:
 
-char variable[10] = "something";
+`char variable[10] = "something";`
 
-In C, a string is actually just an array (in Python they are called lists) of characters. So by writing char variable[10] we're telling it to leave room for 10 characters in memory for this variable.
+In C, a string is actually just an array (in Python they are called lists) of characters. So by writing `char variable[10]` we're telling it to leave room for 10 characters in memory for this variable.
 
-4.2 Buffer Overflow
+## 4.2 Buffer Overflow
 
 Imagine you have a small glass in front of you and your friend tried to pour a whole 1 litre bottle of water into your glass. Of course, you know what's going to happen, right? It's going to reach the top of the glass and then start to overflow onto the table.
 
@@ -24,13 +24,13 @@ Just like with the glass, if you try to put something that's too large into a me
 
 Let's have a look at an overflow in C:
 
+```
 char buffer[10] = "";
-
 int test = 0;
-
 scanf("%s", buffer);
+```
 
-This simple code creates a variable called 'buffer' with room in its memory for 10 characters. It also creates another variable, this time an integer (whole number) called 'test'. Then it called scanf which just asks a user to input something into the program. Whatever the user inputs, it saves it in the 'buffer' variable.
+This simple code creates a variable called `buffer` with room in its memory for 10 characters. It also creates another variable, this time an integer (whole number) called `test`. Then it called `scanf` which just asks a user to input something into the program. Whatever the user inputs, it saves it in the `buffer` variable.
 
 So, if the user enters something less than 10 characters, everything is fine, but if the user puts in more than 10 characters, we have a problem. Let's say the user puts in a whole bunch of A's. If the user puts in enough A's then the value of 'buffer' will be all A's, but it's also possible that the value of 'test' will be overwritten with A's. Now 'test' is an integer, so it can't hold an A value, but A written as a number is 41, so 'test' could become 41414141.
 
