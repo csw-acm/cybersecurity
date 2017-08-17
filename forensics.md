@@ -4,7 +4,7 @@ Computer forensics is defined as the examination of digital media with the aim o
 
 ## 6.1 Files
 
-What are files? Well, a file is just a bunch of data. Each file is interpreted differently depending on the program that is used to read the file. To a computer, the file is just a series of 0s and 1s. Viewing a file as the 0s and 1s would make the file much too long, however. So we encode them into hex and we can view that with a hex editor, such as 'Bless'. We can learn a lot from looking at the raw hex of a file. One of the things we can find information on is the file header.
+What are files? Well, a file is just a bunch of data. Each file is interpreted differently depending on the program that is used to read the file. To a computer, the file is just a series of 0s and 1s. Viewing a file as the 0s and 1s would make the file much too long, however. So we encode them into hex and we can view that with a hex editor, such as [Okteta](https://utils.kde.org/projects/okteta/). We can learn a lot from looking at the raw hex of a file. One of the things we can find information on is the file header.
 
 ## 6.2 File Header
 
